@@ -3,5 +3,21 @@
   "version": "0.0.0",
   "description": "An open source implementation of Catan.",
   "repository": "git@github.com:chiel/colonists.git",
-  "author": "chielkunkels"
+  "author": "chielkunkels",
+  "scripts": {
+    "watch:scripts": "lerna exec --parallel -- babel -w -D -d dist src"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.36",
+    "@babel/core": "^7.0.0-beta.36",
+    "@babel/preset-env": "^7.0.0-beta.36",
+    "@babel/preset-react": "^7.0.0-beta.36",
+    "@babel/preset-stage-2": "^7.0.0-beta.36",
+    "lerna": "^2.5.1",
+    "npm-run-all": "^4.1.2",
+    "rimraf": "^2.6.2"
+  }
 }

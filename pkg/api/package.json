@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "version": "0.0.0",
+  "name": "@colonists/api",
+  "repository": "git@github.com:chiel/colonists.git",
+  "author": "chielkunkels"
+}

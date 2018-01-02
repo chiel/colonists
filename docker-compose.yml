@@ -14,6 +14,19 @@ services:
     volumes:
     - .:/code
 
+  app_server:
+    build:
+      context: .
+      dockerfile: ./pkg/app/Dockerfile.dev
+    command: yarn watch:server
+    depends_on:
+    - babel
+    restart: unless-stopped
+    ports:
+    - 12951:12951
+    volumes:
+    - .:/code
+
   babel:
     build:
       context: .

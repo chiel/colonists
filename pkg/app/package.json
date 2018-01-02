@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "version": "0.0.0",
+  "name": "@colonists/app",
+  "repository": "git@github.com:chiel/colonists.git",
+  "author": "chielkunkels",
+  "scripts": {
+    "watch:server": "nodemon -q dist/server"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.7"
+  }
+}

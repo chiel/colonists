@@ -1,0 +1,7 @@
+FROM node:9.2.0-alpine
+
+WORKDIR /code/pkg/app
+
+EXPOSE 12951
+
+CMD ["yarn", "watch"]

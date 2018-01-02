@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  babel:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: yarn watch:scripts
+    volumes:
+    - .:/code

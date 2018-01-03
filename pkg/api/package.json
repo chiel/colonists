@@ -5,6 +5,7 @@
   "repository": "git@github.com:chiel/colonists.git",
   "author": "chielkunkels",
   "scripts": {
+    "start": "node dist",
     "watch": "nodemon -q dist"
   },
   "dependencies": {

@@ -1,0 +1,11 @@
+localhost:12950 {
+	gzip
+	header / -Server
+	proxy / api:12950
+}
+
+localhost:12951 {
+	gzip
+	header / -Server
+	proxy / app_server:12951
+}

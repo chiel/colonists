@@ -9,8 +9,6 @@ services:
     depends_on:
     - babel
     restart: unless-stopped
-    ports:
-    - 12950:12950
     volumes:
     - .:/code
 
@@ -22,8 +20,6 @@ services:
     depends_on:
     - babel
     restart: unless-stopped
-    ports:
-    - 12951:12951
     volumes:
     - .:/code
 
@@ -34,3 +30,11 @@ services:
     command: yarn watch:scripts
     volumes:
     - .:/code
+
+  caddy:
+    image: joshix/caddy
+    ports:
+    - 12950:12950
+    - 12951:12951
+    volumes:
+    - .:/var/www/html

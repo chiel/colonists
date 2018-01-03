@@ -1,0 +1,73 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: colonists
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: colonists
+  name: api
+spec:
+  selector:
+    app: api
+  ports:
+  - name: http
+    port: 80
+    targetPort: 12950
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: colonists
+  name: app
+spec:
+  selector:
+    app: app
+  ports:
+  - name: http
+    port: 80
+    targetPort: 12951
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: colonists
+  name: api
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api
+        image: gcr.io/kunkels-core/colonists-api:$SHORT_SHA
+        env:
+        - name: NODE_ENV
+          value: production
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: colonists
+  name: app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: app
+        image: gcr.io/kunkels-core/colonists-app:$SHORT_SHA
+        env:
+        - name: NODE_ENV
+          value: production

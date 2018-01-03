@@ -22,3 +22,36 @@ steps:
 
 - name: gcr.io/cloud-builders/docker
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/colonists-app:$SHORT_SHA', 'pkg/app']
+
+- name: gcr.io/cloud-builders/gcloud
+  env:
+  - KUBECONFIG=/kube/config
+  volumes:
+  - name: kube
+    path: /kube
+  args:
+  - container
+  - clusters
+  - get-credentials
+  - '$_GCP_CLUSTER'
+  - --project
+  - '$PROJECT_ID'
+  - --zone
+  - '$_GCP_ZONE'
+
+- name: gcr.io/cloud-builders/kubectl
+  env:
+  - KUBECONFIG=/kube/config
+  - SHORT_SHA=$SHORT_SHA
+  volumes:
+  - name: kube
+    path: /kube
+  entrypoint: sh
+  args:
+  - -c
+  - |
+    eval "cat <<EOF
+    $(cat .k8s.yml)
+    EOF
+    " > .k8s-final.yml
+    kubectl apply -f .k8s-final.yml

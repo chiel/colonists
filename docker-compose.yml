@@ -12,6 +12,15 @@ services:
     volumes:
     - .:/code
 
+  app_client:
+    build:
+      context: .
+      dockerfile: ./pkg/app/Dockerfile.dev
+    command: yarn watch:client
+    restart: unless-stopped
+    volumes:
+    - .:/code
+
   app_server:
     build:
       context: .

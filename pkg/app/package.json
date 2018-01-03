@@ -5,6 +5,7 @@
   "repository": "git@github.com:chiel/colonists.git",
   "author": "chielkunkels",
   "scripts": {
+    "watch:client": "webpack -w --display errors-only",
     "watch:server": "nodemon -q -w dist dist/server"
   },
   "dependencies": {
@@ -15,6 +16,8 @@
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
-    "nodemon": "^1.14.7"
+    "babel-loader": "^8.0.0-beta.0",
+    "nodemon": "^1.14.7",
+    "webpack": "^3.10.0"
   }
 }

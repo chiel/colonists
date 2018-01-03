@@ -8,6 +8,8 @@ import Root from '../app/components/Root';
 const app = express();
 app.disable('x-powered-by');
 
+app.use(express.static(`${__dirname}/../public`));
+
 app.get('/', (req, res) => {
 	const body = renderDocument(<Root>Hello world.</Root>);
 	res.send(body);

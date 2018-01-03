@@ -1,5 +1,6 @@
 images:
 - gcr.io/$PROJECT_ID/colonists-api:$SHORT_SHA
+- gcr.io/$PROJECT_ID/colonists-app:$SHORT_SHA
 
 steps:
 - name: gcr.io/cloud-builders/yarn
@@ -8,5 +9,16 @@ steps:
 - name: gcr.io/cloud-builders/yarn
   args: ['build:scripts']
 
+- name: gcr.io/cloud-builders/yarn
+  dir: pkg/app
+  args: ['install']
+
+- name: gcr.io/cloud-builders/yarn
+  dir: pkg/app
+  args: ['build:client']
+
 - name: gcr.io/cloud-builders/docker
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/colonists-api:$SHORT_SHA', 'pkg/api']
+
+- name: gcr.io/cloud-builders/docker
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/colonists-app:$SHORT_SHA', 'pkg/app']

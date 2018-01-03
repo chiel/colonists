@@ -5,6 +5,8 @@
   "repository": "git@github.com:chiel/colonists.git",
   "author": "chielkunkels",
   "scripts": {
+    "build:client": "webpack --display errors-only",
+    "start": "node dist/server",
     "watch:client": "webpack -w --display errors-only",
     "watch:server": "nodemon -q -w dist dist/server"
   },

@@ -17,7 +17,12 @@
   },
   "devDependencies": {
     "babel-loader": "^8.0.0-beta.0",
+    "modular-css-webpack": "^7.2.0",
     "nodemon": "^1.14.7",
+    "postcss-color-function": "^4.0.1",
+    "postcss-import": "^11.0.0",
+    "postcss-inline-svg": "^3.0.0",
+    "postcss-nested": "^3.0.0",
     "webpack": "^3.10.0"
   }
 }

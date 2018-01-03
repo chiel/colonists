@@ -1,0 +1,10 @@
+html {
+	box-sizing: border-box;
+	font: 300 16px/30px merriweather, serif;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}

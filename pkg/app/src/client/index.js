@@ -1,3 +1,5 @@
+import '../app/styles/base.css';
+
 import React from 'react';
 import { hydrate } from 'react-dom';
 

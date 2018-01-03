@@ -13,6 +13,8 @@ export default function renderDocument(component) {
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		${helmet.title.toString()}
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,400">
+		<link rel="stylesheet" href="/assets/app.css">
 	</head>
 	<body>
 		<div id="app-root">${markup}</div>

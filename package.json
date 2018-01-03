@@ -13,7 +13,7 @@
     "@babel/core": "^7.0.0-beta.36",
     "@babel/preset-env": "^7.0.0-beta.36",
     "@babel/preset-react": "^7.0.0-beta.36",
-    "@babel/preset-stage-2": "^7.0.0-beta.36",
+    "@babel/preset-stage-1": "^7.0.0-beta.36",
     "babel-eslint": "^8.1.2",
     "eslint": "^4.14.0",
     "eslint-config-airbnb": "^16.1.0",

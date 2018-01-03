@@ -1,0 +1,63 @@
+@value * as v from './vars.css';
+
+.button {
+	padding: 0 12px;
+	border: 0;
+	border-radius: 0;
+	background: #fff;
+	font: 700 12px/36px ubuntu;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+	transition:
+		background-color .15s ease-out,
+		box-shadow .15s ease-out,
+		opacity .15s ease-out,
+		padding .1s ease-out,
+		transform .05s ease-out;
+
+	&:hover {
+		background: #eee;
+	}
+
+	&:focus {
+		background: #eee;
+		box-shadow: 0 0 0 1px color(#eee l(+40%)), 0 0 6px 1px #ddd;
+		outline: 0;
+	}
+
+	&:active {
+		background: #eee;
+		box-shadow: inset 0 0 5px color(#eee l(-30%));
+	}
+
+	&[disabled] {
+		opacity: .5;
+		pointer-events: none;
+	}
+}
+
+.small {
+	padding: 0 9px;
+	font-size: 11px;
+	line-height: 24px;
+}
+
+.primary {
+	background: v.c-main;
+	color: #fff;
+	font-weight: 400;
+
+	&:hover {
+		background: color(v.c-main l(+10%));
+	}
+
+	&:focus {
+		background: color(v.c-main l(+10%));
+		box-shadow: 0 0 0 1px color(v.c-main l(+40%)), 0 0 6px 1px v.c-main;
+	}
+
+	&:active {
+		background: color(v.c-main l(+10%));
+		box-shadow: inset 0 0 5px color(v.c-main l(-30%));
+	}
+}

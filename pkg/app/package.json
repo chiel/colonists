@@ -5,10 +5,13 @@
   "repository": "git@github.com:chiel/colonists.git",
   "author": "chielkunkels",
   "scripts": {
-    "watch:server": "nodemon -q dist/server"
+    "watch:server": "nodemon -q -w dist dist/server"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "nodemon": "^1.14.7"

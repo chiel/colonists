@@ -1,4 +1,8 @@
-export default function renderDocument(markup) {
+import { renderToString } from 'react-dom/server'
+
+export default function renderDocument(component) {
+	const markup = renderToString(component);
+
 	/* eslint-disable indent */
 	return `<!doctype html>
 <html>

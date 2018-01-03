@@ -5,6 +5,8 @@ import React from 'react';
 
 import renderDocument from './utils/renderDocument';
 
+import LayoutBranded from '../app/components/LayoutBranded';
+import LoginForm from '../app/components/LoginForm';
 import Root from '../app/components/Root';
 
 const app = express();
@@ -13,7 +15,13 @@ app.disable('x-powered-by');
 app.use(express.static(`${__dirname}/../public`));
 
 app.get('/', (req, res) => {
-	const body = renderDocument(<Root>Hello world.</Root>);
+	const body = renderDocument(
+		<Root>
+			<LayoutBranded>
+				<LoginForm />
+			</LayoutBranded>
+		</Root>,
+	);
 	res.send(body);
 });
 

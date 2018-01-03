@@ -1,0 +1,52 @@
+.field {
+	position: relative;
+	margin-bottom: 48px;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 0;
+		height: 2px;
+		margin: -1px 0 0;
+		background: #444;
+		transition: width .2s ease-out;
+	}
+}
+
+.label {
+	display: block;
+	color: #757575;
+	font-weight: 400;
+	transition: color .2s ease-out;
+}
+
+.hint {
+	margin-left: 16px;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 18px;
+}
+
+.error {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	color: #d4341c;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.focussed {
+	.label {
+		color: #444;
+	}
+
+	&::after {
+		width: 100%;
+	}
+}

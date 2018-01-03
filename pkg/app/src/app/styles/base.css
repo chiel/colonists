@@ -1,5 +1,8 @@
+@value * as v from './vars.css';
+
 html {
 	box-sizing: border-box;
+	color: v.c-text;
 	font: 300 16px/30px merriweather, serif;
 }
 

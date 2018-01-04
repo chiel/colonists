@@ -5,6 +5,7 @@
   "repository": "git@github.com:chiel/colonists.git",
   "author": "chielkunkels",
   "scripts": {
+    "bootstrap": "yarn && lerna bootstrap",
     "build:scripts": "lerna exec --parallel -- babel -D -d dist src",
     "watch:scripts": "lerna exec --parallel -- babel -w -D -d dist src"
   },

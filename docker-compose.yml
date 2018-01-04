@@ -26,6 +26,8 @@ services:
       context: .
       dockerfile: ./pkg/app/Dockerfile.dev
     command: yarn watch:server
+    environment:
+      API_URL: http://localhost:12950
     depends_on:
     - babel
     restart: unless-stopped

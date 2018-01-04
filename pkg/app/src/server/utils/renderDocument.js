@@ -22,7 +22,7 @@ export default function renderDocument(component) {
 	<body>
 		<div id="app-root">${markup}</div>
 		<script>
-			window.ENV = ${JSON.stringify(env)}
+			window.ENV = ${JSON.stringify(env)};
 		</script>
 		<script src="/assets/app.js"></script>
 	</body>

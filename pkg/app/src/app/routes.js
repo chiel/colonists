@@ -1,4 +1,5 @@
 import LayoutBranded from './components/LayoutBranded';
+import LobbyContainer from './components/LobbyContainer';
 import LoginForm from './components/LoginForm';
 import Root from './components/Root';
 
@@ -14,6 +15,10 @@ export default [
 						component: LoginForm,
 					},
 				],
+			},
+			{
+				path: '/lobby',
+				component: LobbyContainer,
 			},
 		],
 	},

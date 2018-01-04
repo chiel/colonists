@@ -1,23 +1,33 @@
 import PT from 'prop-types';
 import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
 import Button from './Button';
 import withForm from './Form';
 
+import { setUser } from '../actions/session';
 import css from '../styles/login-form.css';
 import * as validators from '../utils/validators';
 
 export class LoginForm extends React.PureComponent {
 	static propTypes = {
+		dispatch: PT.func.isRequired,
 		fields: PT.objectOf(PT.func).isRequired,
 		formValidate: PT.func.isRequired,
+		router: PT.shape({
+			push: PT.func.isRequired,
+		}).isRequired,
 	};
 
 	handleSubmit = ev => {
 		ev.preventDefault();
-		this.props.formValidate()
-			.then(values => {
-				console.log('VALID', values);
+
+		const { dispatch, formValidate, router } = this.props;
+		formValidate()
+			.then(({ username }) => {
+				dispatch(setUser({ username }));
+				router.push('/lobby');
 			})
 			.catch(() => {});
 	}
@@ -56,4 +66,4 @@ export default withForm(() => ({
 			],
 		},
 	},
-}))(LoginForm);
+}))(connect()(withRouter(LoginForm)));

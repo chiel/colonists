@@ -9,7 +9,10 @@
     "watch": "nodemon -q dist"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.14.7"

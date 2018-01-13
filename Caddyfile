@@ -1,7 +1,9 @@
 localhost:12950 {
 	gzip
 	header / -Server
-	proxy / api:12950
+	proxy / api:12950 {
+		websocket
+	}
 }
 
 localhost:12951 {

@@ -1,6 +1,7 @@
+import App from './components/App';
 import LayoutBranded from './components/LayoutBranded';
 import LobbyContainer from './components/LobbyContainer';
-import LoginForm from './components/LoginForm';
+import Login from './components/Login';
 import Root from './components/Root';
 
 export default [
@@ -11,14 +12,19 @@ export default [
 				component: LayoutBranded,
 				childRoutes: [
 					{
-						path: '/',
-						component: LoginForm,
+						path: '/login',
+						component: Login,
 					},
 				],
 			},
 			{
-				path: '/lobby',
-				component: LobbyContainer,
+				component: App,
+				childRoutes: [
+					{
+						path: '/',
+						component: LobbyContainer,
+					},
+				],
 			},
 		],
 	},

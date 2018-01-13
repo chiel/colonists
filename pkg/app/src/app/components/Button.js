@@ -8,6 +8,7 @@ export default class Button extends React.PureComponent {
 	static propTypes = {
 		children: PT.node,
 		className: PT.string,
+		href: PT.string,
 		primary: PT.bool,
 		small: PT.bool,
 		submit: PT.bool,
@@ -16,27 +17,34 @@ export default class Button extends React.PureComponent {
 	static defaultProps = {
 		children: undefined,
 		className: undefined,
+		href: undefined,
 		primary: false,
 		small: false,
 		submit: false,
 	};
 
 	render() {
-		const { children, className, primary, small, submit, ...props } = this.props;
+		const { children, className, href, primary, small, submit, ...props } = this.props;
+
+		let component = 'button';
+		if (href) {
+			component = 'a';
+			props.href = href;
+		}
 
 		const classes = classnames(css.button, {
 			[css.primary]: primary,
 			[css.small]: small,
 		}, className);
 
-		return (
-			<button
-				{...props}
-				className={classes}
-				type={submit ? 'submit' : 'button'}
-			>
-				{children}
-			</button>
+		return React.createElement(
+			component,
+			{
+				...props,
+				className: classes,
+				type: submit ? 'submit' : 'button',
+			},
+			children,
 		);
 	}
 }

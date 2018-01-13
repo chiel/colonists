@@ -51,6 +51,25 @@ spec:
         env:
         - name: NODE_ENV
           value: production
+        - name: AUTH_GOOGLE_CLIENT_ID
+          value: 1043711719111-hseag7asmi65f9qp737ovmcj1sh5vool.apps.googleusercontent.com
+        - name: AUTH_GOOGLE_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: colonists-secrets
+              key: google_client_secret
+        - name: AUTH_TOKEN_SALT
+          valueFrom:
+            secretKeyRef:
+              name: colonists-secrets
+              key: token_salt
+        - name: MONGO_URL
+          valueFrom:
+            secretKeyRef:
+              name: colonists-secrets
+              key: mongodb_url
+        - name: MONGO_DB
+          value: colonists
 
 ---
 apiVersion: extensions/v1beta1
@@ -71,3 +90,9 @@ spec:
         env:
         - name: NODE_ENV
           value: production
+        - name: API_URL_SERVER
+          value: api
+        - name: API_URL
+          value: https://api.colonists.io
+        - name: APP_URL
+          value: https://colonists.io

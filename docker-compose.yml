@@ -8,6 +8,14 @@ services:
     command: yarn watch
     depends_on:
     - babel
+    environment:
+      AUTH_GOOGLE_CLIENT_ID: 1043711719111-hseag7asmi65f9qp737ovmcj1sh5vool.apps.googleusercontent.com
+      AUTH_GOOGLE_CLIENT_SECRET: Ln_kQg7oM_8y3IEEw82cG3dJ
+      AUTH_TOKEN_SALT: lksjdf1209jjjjaaaav_asd~a1
+      MONGO_URL: mongodb://mongo:27017
+      MONGO_DB: colonists
+    links:
+    - mongo
     restart: unless-stopped
     volumes:
     - .:/code
@@ -26,10 +34,14 @@ services:
       context: .
       dockerfile: ./pkg/app/Dockerfile.dev
     command: yarn watch:server
-    environment:
-      API_URL: http://localhost:12950
     depends_on:
     - babel
+    environment:
+      API_URL_SERVER: http://api:12950
+      API_URL: http://localhost:12950
+      APP_URL: http://localhost:12951
+    links:
+    - api
     restart: unless-stopped
     volumes:
     - .:/code
@@ -49,3 +61,11 @@ services:
     - 12951:12951
     volumes:
     - .:/var/www/html
+
+  mongo:
+    image: mongo:3.6.1-jessie
+    volumes:
+    - dbdata:/data/db
+
+volumes:
+  dbdata:

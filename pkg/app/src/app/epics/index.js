@@ -11,5 +11,6 @@ import { openEpic } from './socket';
 
 export default combineEpics(
 	queueJoinEpic,
+	queueReadyEpic,
 	openEpic,
 );

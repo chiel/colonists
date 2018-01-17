@@ -10,3 +10,8 @@ export function queueJoinEpic(action$) {
 		})
 		.ignoreElements();
 }
+
+export function queueReadyEpic(action$) {
+	return action$.ofType(queueReady.type)
+		.map(({ payload }) => push(`/match/${payload.match.id}`));
+}

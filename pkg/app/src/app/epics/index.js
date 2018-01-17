@@ -6,7 +6,7 @@ import 'rxjs/add/operator/switchMap';
 
 import { combineEpics } from 'redux-observable';
 
-import { queueJoinEpic } from './queue';
+import { queueJoinEpic, queueReadyEpic } from './queue';
 import { openEpic } from './socket';
 
 export default combineEpics(

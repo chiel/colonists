@@ -2,6 +2,7 @@ import App from './components/App';
 import LayoutBranded from './components/LayoutBranded';
 import LobbyContainer from './components/LobbyContainer';
 import Login from './components/Login';
+import Match from './components/Match';
 import Root from './components/Root';
 
 export default [
@@ -23,6 +24,10 @@ export default [
 					{
 						path: '/',
 						component: LobbyContainer,
+					},
+					{
+						path: '/match/:id',
+						component: Match,
 					},
 				],
 			},

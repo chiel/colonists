@@ -1,0 +1,31 @@
+.image {
+	opacity: .75;
+}
+
+.tile-water {
+	fill: color(lightblue a(50%));
+}
+
+.tile-desert {
+	fill: color(orange a(50%));
+}
+
+.tile-fields {
+	fill: color(yellow a(50%));
+}
+
+.tile-forest {
+	fill: color(darkgreen a(50%));
+}
+
+.tile-hills {
+	fill: color(maroon a(50%));
+}
+
+.tile-mountains {
+	fill: color(lightgrey a(50%));
+}
+
+.tile-pasture {
+	fill: color(lightgreen a(50%));
+}

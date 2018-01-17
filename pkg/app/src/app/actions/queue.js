@@ -1,4 +1,14 @@
-export function joinQueue() {
-	return { type: joinQueue.type };
+export function queueJoin() {
+	return { type: queueJoin.type };
 }
-joinQueue.type = 'colonists/queue/join';
+queueJoin.type = 'colonists/queue/join';
+
+export function queueJoined() {
+	return { type: queueJoined.type };
+}
+queueJoined.type = 'colonists/queue/joined';
+
+export function queueReady(payload) {
+	return { type: queueReady.type, payload };
+}
+queueReady.type = 'colonists/queue/ready';

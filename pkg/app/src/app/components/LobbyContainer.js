@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import Lobby from './Lobby';
 
-import { joinQueue } from '../actions/queue';
+import { queueJoin } from '../actions/queue';
 import { selectUser } from '../selectors/session';
 import * as types from '../types';
 
@@ -15,7 +15,7 @@ export class LobbyContainer extends React.PureComponent {
 	};
 
 	handleJoinQueue = () => {
-		this.props.dispatch(joinQueue());
+		this.props.dispatch(queueJoin());
 	}
 
 	render() {

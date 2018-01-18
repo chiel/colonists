@@ -1,5 +1,5 @@
 .vertex {
 	position: relative;
 	z-index: 2;
-	fill: #f00;
+	fill: transparent;
 }

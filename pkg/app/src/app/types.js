@@ -1,5 +1,11 @@
 import PT from 'prop-types';
 
+export const chit = PT.shape({
+	letter: PT.string.isRequired,
+	number: PT.number.isRequired,
+	pips: PT.number.isRequired,
+});
+
 export const tile = PT.shape({
 	c: PT.number.isRequired,
 	r: PT.number.isRequired,

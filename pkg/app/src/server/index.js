@@ -6,6 +6,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
 
+import cacheChitsMiddleware from './utils/cacheChitsMiddleware';
 import createStoreMiddleware from './utils/createStoreMiddleware';
 import renderDocument from './utils/renderDocument';
 import handleApiError from './utils/handleApiError';
@@ -20,6 +21,7 @@ app.disable('x-powered-by');
 app.use(express.static(`${__dirname}/../public`));
 app.use(cookieParser());
 app.use(createStoreMiddleware);
+app.use(cacheChitsMiddleware);
 
 app.use((req, res, next) => {
 	const token = req.cookies.colonists_token;

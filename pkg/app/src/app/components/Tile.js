@@ -1,6 +1,8 @@
 import PT from 'prop-types';
 import React from 'react';
 
+import Chit from './Chit';
+
 import css from '../styles/tile.css';
 import * as types from '../types';
 import classnames from '../utils/classnames';
@@ -12,7 +14,7 @@ export default class Tile extends React.PureComponent {
 	};
 
 	render() {
-		const { size, tile: { t, x, y } } = this.props;
+		const { size, tile: { n, t, x, y } } = this.props;
 
 		const height = size * 2;
 		const width = (Math.sqrt(3) / 2) * height;
@@ -27,6 +29,9 @@ export default class Tile extends React.PureComponent {
 					height={height}
 					width={width}
 				/>
+				{!!n && (
+					<Chit chit={n} />
+				)}
 			</g>
 		);
 	}
